@@ -1,0 +1,444 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jai Prakash M D - Web Developer & Medical Student</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 2rem;
+      line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #1e293b;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #334155;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.25rem;
+      background: linear-gradient(90deg, #38bdf8, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 700;
+    }
+    .tagline {
+      color: #94a3b8;
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+    h2 {
+      color: #38bdf8;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #38bdf8;
+      border-radius: 3px;
+    }
+    a {
+      color: #60a5fa;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      color: #38bdf8;
+      text-decoration: underline;
+    }
+    .info, .section {
+      margin-bottom: 1.5rem;
+    }
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      margin-bottom: 0.75rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+    }
+    .label {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      display: inline-block;
+      min-width: 80px;
+    }
+    .project {
+      margin-bottom: 1.5rem;
+    }
+    .project-title {
+      font-weight: 600;
+      color: #f8fafc;
+      margin-bottom: 0.25rem;
+    }
+    .project-title a {
+      color: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .project-title a:hover {
+      color: #38bdf8;
+    }
+    .project-title .link-icon {
+      font-size: 0.8em;
+      opacity: 0.7;
+    }
+    .project-desc {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .skill-tag {
+      background: #334155;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+    .icon {
+      width: 18px;
+      text-align: center;
+      color: #60a5fa;
+    }
+    .download-btn {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(90deg, #38bdf8, #60a5fa);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 100;
+    }
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+    }
+    .download-options {
+      position: fixed;
+      bottom: 5.5rem;
+      right: 2rem;
+      background: #1e293b;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      padding: 0.5rem;
+      z-index: 101;
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: 1px solid #334155;
+    }
+    .download-options.show {
+      display: flex;
+    }
+    .download-option {
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #f8fafc;
+      transition: background 0.2s ease;
+    }
+    .download-option:hover {
+      background: #334155;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .download-btn {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      .download-options {
+        bottom: 4rem;
+        right: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Jai Prakash M D</h1>
+        <p class="tagline">Web Developer & Medical Student</p>
+      </div>
+    </header>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <span class="icon"><i class="fas fa-phone"></i></span>
+        <a href="tel:+916379570398">+91 63795 70398</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon"><i class="fas fa-envelope"></i></span>
+        <a href="mailto:jaiprakashmdofficial@gmail.com">jaiprakashmdofficial@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon"><i class="fas fa-globe"></i></span>
+        <a href="https://jaiprakashmd.com" target="_blank">jaiprakashmd.com</a>
+      </div>
+      <div class="contact-item">
+        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+        <span>Tamil Nadu, India</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>About Me</h2>
+      <p>Creative and self-driven web developer with a passion for building interactive websites, custom platforms, and creative digital experiences. Currently pursuing MBBS while managing freelance web projects through my startup Webistzu. Skilled in full-stack development with a focus on creating memorable user experiences.</p>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <strong>MBBS</strong> – Georgian National University SEU<br>
+          <em>2025–2031</em>
+        </li>
+        <li>
+          <strong>Higher Secondary (Bio–Maths)</strong> – Velammal Vidhyashram, Surapet<br>
+          <em>Graduated 2023</em>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express</span>
+        <span class="skill-tag">Socket.IO</span>
+        <span class="skill-tag">UI/UX Design</span>
+        <span class="skill-tag">GitHub Pages</span>
+        <span class="skill-tag">ngrok</span>
+        <span class="skill-tag">Branding</span>
+        <span class="skill-tag">Android Modding</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Medical Skills</h2>
+      <div class="skills-container">
+        <span class="skill-tag">Physiology</span>
+        <span class="skill-tag">Embryology</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Aviation Skills</h2>
+      <div class="skills-container">
+        <span class="skill-tag">Aviation Management</span>
+        <span class="skill-tag">Flight Operations</span>
+        <span class="skill-tag">Air Traffic Control Basics</span>
+        <span class="skill-tag">Aviation Safety</span>
+        <span class="skill-tag">Aircraft Systems</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Projects</h2>
+      <div class="project">
+        <div class="project-title">
+          <a href="https://webistzu.com" target="_blank">
+            Webistzu (Founder) <i class="fas fa-external-link-alt link-icon"></i>
+          </a>
+        </div>
+        <div class="project-desc">Web development startup helping businesses with portfolio sites, business platforms, and branding solutions. Developed multiple client websites with custom functionality and responsive designs.</div>
+      </div>
+      <div class="project">
+        <div class="project-title">
+          <a href="#" class="coming-soon">
+            MeShopping (Coming Soon) <i class="fas fa-lock link-icon"></i>
+          </a>
+        </div>
+        <div class="project-desc">Custom e-commerce platform built from scratch with product listings, cart functionality, and checkout process. Implemented responsive design and optimized performance.</div>
+      </div>
+      <div class="project">
+        <div class="project-title">
+          <a href="#" class="coming-soon">
+            MeCHAT (Coming Soon) <i class="fas fa-lock link-icon"></i>
+          </a>
+        </div>
+        <div class="project-desc">Real-time chat application featuring Discord-style layout, persistent messaging, dynamic channels, and user authentication using Node.js and Socket.IO.</div>
+      </div>
+      <div class="project">
+        <div class="project-title">
+          <a href="#" class="private-site">
+            Forever Us (Private Site) <i class="fas fa-eye-slash link-icon"></i>
+          </a>
+        </div>
+        <div class="project-desc">Interactive anniversary website featuring music integration, animated popups, story navigation, and personalized moments with smooth transitions and engaging UI.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Built and deployed multiple full-stack websites independently while balancing medical studies</li>
+        <li>Successfully rooted and enhanced Android devices with Magisk, LSPosed, and AdAway</li>
+        <li>Founded Webistzu, an early-stage startup with live client sites and positive feedback</li>
+        <li>Created a printed AI-designed comic book (Love Comic Book) combining technical and creative skills</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Interests</h2>
+      <div class="skills-container">
+        <span class="skill-tag">Web Development</span>
+        <span class="skill-tag">Creative Storytelling</span>
+        <span class="skill-tag">Tech Modding</span>
+        <span class="skill-tag">UI/UX Design</span>
+        <span class="skill-tag">Animation</span>
+        <span class="skill-tag">Entrepreneurship</span>
+        <span class="skill-tag">Medical Technology</span>
+        <span class="skill-tag">Aviation</span>
+      </div>
+    </section>
+  </div>
+
+  <button class="download-btn" id="downloadBtn">
+    <i class="fas fa-download"></i> Download Resume
+  </button>
+
+  <div class="download-options" id="downloadOptions">
+    <div class="download-option" data-format="png">
+      <i class="fas fa-image"></i> Download as PNG
+    </div>
+    <div class="download-option" data-format="jpg">
+      <i class="fas fa-image"></i> Download as JPG
+    </div>
+    <div class="download-option" data-format="pdf">
+      <i class="fas fa-file-pdf"></i> Download as PDF
+    </div>
+  </div>
+
+  <script>
+    // Handle coming soon and private site links
+    document.querySelectorAll('.coming-soon, .private-site').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('This project is not publicly available yet');
+      });
+    });
+
+    // Handle download button click
+    const downloadBtn = document.getElementById('downloadBtn');
+    const downloadOptions = document.getElementById('downloadOptions');
+    
+    downloadBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      downloadOptions.classList.toggle('show');
+    });
+
+    // Close download options when clicking outside
+    document.addEventListener('click', function() {
+      downloadOptions.classList.remove('show');
+    });
+
+    // Prevent options from closing when clicking inside
+    downloadOptions.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
+    // Handle download option selection
+    document.querySelectorAll('.download-option').forEach(option => {
+      option.addEventListener('click', function() {
+        const format = this.getAttribute('data-format');
+        downloadOptions.classList.remove('show');
+        
+        // Replace these with your actual file URLs
+        const fileUrls = {
+          png: 'resume.png',
+          jpg: 'resume.jpg',
+          pdf: 'resume.pdf'
+        };
+
+        if (fileUrls[format]) {
+          const link = document.createElement('a');
+          link.href = fileUrls[format];
+          link.download = `JAI_PRAKASH_MD_RESUME.${format}`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jai Prakash M D - Web & Server Expert</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: #121212;
+    color: #eee;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    color: #00adee;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
+    color: #00adee;
+  }
+  header p {
+    font-size: 1.2rem;
+    color: #aaa;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  h2 {
+    border-bottom: 2px solid #00adee;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  /* Services List */
+  ul.services-list {
+    list-style-type: none;
+  }
+  ul.services-list li {
+    background: #1e1e1e;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 173, 238, 0.2);
+    font-weight: 600;
+  }
+  /* Projects */
+  .projects {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  }
+  .project-card {
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 12px rgba(0,173,238,0.3);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  .project-card h3 {
+    margin-bottom: 0.5rem;
+    color: #00adee;
+  }
+  .project-card p {
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+  /* Project Details Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+  }
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+  }
+  .close-btn:hover {
+    color: #fff;
+  }
+  /* Contact */
+  .contact p {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+  }
+  .btn {
+    display: inline-block;
+    background: #00adee;
+    color: #121212;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+  }
+  .btn:hover {
+    background: #0087bb;
+    color: #eee;
+  }
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background: #111;
+    color: #666;
+    margin-top: auto;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Jai Prakash M D</h1>
+      <p>Web Developer & Server Setup Specialist</p>
+    </header>
+
+    <section>
+      <h2>Services I Offer</h2>
+      <ul class="services-list">
+        <li>Custom Responsive Websites (HTML, CSS, JavaScript)</li>
+        <li>Raspberry Pi / Linux Server Setup & Hosting</li>
+        <li>Networking: Static IP, Port Forwarding, Domain Setup</li>
+        <li>Managing Startup Company Mail and Social Media IDs</li>
+        <li>Website Maintenance & Troubleshooting</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Sample Projects</h2>
+      <div class="projects">
+        <div class="project-card" onclick="showProjectDetails('portfolio')">
+          <h3>Portfolio Website</h3>
+          <p>A clean, responsive portfolio site showcasing skills and work.</p>
+        </div>
+        <div class="project-card" onclick="showProjectDetails('business')">
+          <h3>Small Business Website</h3>
+          <p>Designed a landing page with contact forms and product highlights.</p>
+        </div>
+        <div class="project-card" onclick="showProjectDetails('raspberry')">
+          <h3>Raspberry Pi Web Server</h3>
+          <p>Set up a home server for hosting websites and backups.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:jaiprakashmdofficial@gmail.com">jaiprakashmdofficial@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/916379570398" target="_blank" rel="noopener noreferrer">+91 63795 70398</a></p>
+
+      <a href="https://www.fiverr.com/s/gDqGd8b" target="_blank" class="btn" style="background:#1dbf73; color:white; display:inline-block; margin-top:0.5rem;">
+        Visit My Fiverr Profile
+      </a>
+    </section>
+  </div>
+
+  <!-- Project Details Modals -->
+  <div id="portfolio-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('portfolio-modal')">&times;</span>
+      <h2>Portfolio Website</h2>
+      <p><strong>Description:</strong> A fully responsive portfolio website built with HTML, CSS, and JavaScript to showcase professional skills, projects, and contact information.</p>
+      <p><strong>Technologies Used:</strong> HTML5, CSS3, JavaScript, Responsive Design</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Clean, modern design with smooth animations</li>
+        <li>Responsive layout that works on all devices</li>
+        <li>Project showcase with detailed descriptions</li>
+        <li>Contact form with validation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="business-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('business-modal')">&times;</span>
+      <h2>Small Business Website</h2>
+      <p><strong>Description:</strong> A professional landing page for a local business, designed to highlight products/services and capture leads.</p>
+      <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, PHP (for form handling)</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Product/service showcase with high-quality images</li>
+        <li>Contact form with server-side validation</li>
+        <li>Testimonials section</li>
+        <li>Mobile-responsive design</li>
+        <li>Basic SEO optimization</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="raspberry-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('raspberry-modal')">&times;</span>
+      <h2>Raspberry Pi Web Server</h2>
+      <p><strong>Description:</strong> A complete home server setup using Raspberry Pi for hosting websites and managing backups.</p>
+      <p><strong>Technologies Used:</strong> Raspberry Pi, Linux (Raspbian), Apache, MySQL, PHP (LAMP stack)</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Full LAMP stack installation and configuration</li>
+        <li>Static IP setup for reliable access</li>
+        <li>Port forwarding for external access</li>
+        <li>Automatic backup system</li>
+        <li>Basic security hardening</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Jai Prakash M D. All rights reserved.
+  </footer>
+
+  <script>
+    function showProjectDetails(projectId) {
+      const modal = document.getElementById(`${projectId}-modal`);
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+
+    // Close modal when clicking outside the content
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
