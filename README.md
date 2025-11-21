@@ -18,8 +18,8 @@ Requirements: Node.js v16+ and npm.
 Clone and run locally:
 
 ```powershell
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/yashvinthan/jaiprakashmd-portfolio.git
+cd jaiprakashmd-portfolio
 npm install
 npm run dev
 ```
