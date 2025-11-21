@@ -1,4 +1,4 @@
-## Personal Portfolio Website v2
+## jaiprakashmd Personal Portfolio Website v2
 
 A modern, minimal portfolio starter built with Vite + React. Use this project to showcase projects, skills, and contact information.
 
